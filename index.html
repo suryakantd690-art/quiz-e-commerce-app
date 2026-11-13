@@ -1,0 +1,171 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShopEasy - Online Shopping</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <div class="announcement">
+        ✨ SUMMER SALE IS LIVE — UP TO 50% OFF
+    </div>
+
+    <header class="navbar">
+        <a href="#" class="logo">Shop<span>Easy.</span></a>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#shop">Shop</a>
+            <a href="#benefits">About</a>
+        </nav>
+
+        <button class="cart-button" id="openCart">
+            🛒 Cart (<span id="cartCount">0</span>)
+        </button>
+    </header>
+
+    <main>
+        <section class="hero" id="home">
+            <div class="hero-content">
+                <span class="tagline">THE GOOD FINDS EDIT</span>
+                <h1>Little Things.<br><span>Big Upgrades.</span></h1>
+                <p>
+                    Discover amazing products at affordable prices.
+                    Make your everyday life better with ShopEasy.
+                </p>
+                <a href="#shop" class="primary-btn">
+                    Explore Collection →
+                </a>
+            </div>
+
+            <div class="hero-image">
+                <img
+                    src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=800"
+                    alt="Premium headphones">
+                <div class="sale-badge">SALE<br>50% OFF</div>
+            </div>
+        </section>
+
+        <section class="shop-section" id="shop">
+            <div class="section-heading">
+                <div>
+                    <span class="tagline">CURATED FOR YOU</span>
+                    <h2>Find Your Favourite.</h2>
+                    <p>Explore our exclusive collection.</p>
+                </div>
+                <span id="resultCount">8 Products</span>
+            </div>
+
+            <div class="toolbar">
+                <div class="filters" id="categoryFilters">
+                    <button class="filter-chip active" data-category="All">All</button>
+                    <button class="filter-chip" data-category="Tech">Tech</button>
+                    <button class="filter-chip" data-category="Style">Style</button>
+                    <button class="filter-chip" data-category="Everyday">Everyday</button>
+                </div>
+
+                <div class="toolbar-right">
+                    <input
+                        type="search"
+                        id="searchInput"
+                        placeholder="Search products...">
+
+                    <select id="sortSelect">
+                        <option value="featured">Featured</option>
+                        <option value="low">Price: Low to High</option>
+                        <option value="high">Price: High to Low</option>
+                        <option value="name">Name: A to Z</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="product-grid" id="productGrid"></div>
+
+            <div class="empty-results hidden" id="emptyResults">
+                <h3>No Products Found!</h3>
+                <p>Try another search or category.</p>
+                <button id="resetFilters">Clear Filters</button>
+            </div>
+        </section>
+
+        <section class="benefits" id="benefits">
+            <div>🚚 <strong>Free Shipping</strong><p>Orders above ₹999</p></div>
+            <div>🔒 <strong>Secure Checkout</strong><p>Safe shopping experience</p></div>
+            <div>💬 <strong>24/7 Support</strong><p>We are here to help</p></div>
+        </section>
+    </main>
+
+    <footer>
+        <h2>Shop<span>Easy.</span></h2>
+        <p>Good finds for everyday life.</p>
+        <small>© <span id="year"></span> ShopEasy. All rights reserved.</small>
+    </footer>
+
+    <div class="overlay" id="overlay"></div>
+
+    <aside class="cart-drawer" id="cartDrawer">
+        <div class="drawer-header">
+            <h2>🛒 Your Cart</h2>
+            <button id="closeCart" class="close-btn">×</button>
+        </div>
+
+        <div id="cartItems" class="cart-items"></div>
+
+        <div class="cart-footer">
+            <p id="shippingHint"></p>
+            <div class="total-row">
+                <span>Subtotal</span>
+                <strong id="cartSubtotal">₹0</strong>
+            </div>
+            <div class="total-row">
+                <span>Shipping</span>
+                <strong id="shippingCost">₹0</strong>
+            </div>
+            <div class="total-row grand-total">
+                <span>Total</span>
+                <strong id="cartTotal">₹0</strong>
+            </div>
+            <button class="primary-btn checkout-btn" id="checkoutButton">
+                Checkout →
+            </button>
+            <button class="continue-btn" id="continueShopping">
+                Continue Shopping
+            </button>
+        </div>
+    </aside>
+
+    <section class="modal-wrap" id="checkoutModal">
+        <div class="checkout-modal">
+            <button class="close-btn modal-close" id="closeCheckout">×</button>
+            <div class="success-icon">✓</div>
+            <h2>Order Summary</h2>
+            <p>Review your order before placing it.</p>
+
+            <div id="checkoutLines"></div>
+
+            <div class="total-row grand-total">
+                <span>Total to Pay</span>
+                <strong id="checkoutTotal">₹0</strong>
+            </div>
+
+            <p class="demo-notice">
+                This is a demo project. No real payment will be collected.
+            </p>
+
+            <button class="primary-btn checkout-btn" id="placeOrder">
+                Place Demo Order
+            </button>
+            <button class="continue-btn" id="backToCart">
+                Back to Cart
+            </button>
+        </div>
+    </section>
+
+    <div class="toast" id="toast"></div>
+
+</body>
+</html>
